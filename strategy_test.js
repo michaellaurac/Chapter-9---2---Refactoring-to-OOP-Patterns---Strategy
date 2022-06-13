@@ -14,10 +14,8 @@ describe("tests run on the 'strategy.js' file:", () => {
     wish(fileName() === "strategy_test.js");
   });
   // initialisation
-  const personOne = new Person();
-  personOne.whatIs = (number) => Number("0b" + number);
-  const personTwo = new Person();
-  personTwo.whatIs = (number) => number;
+  const personOne = new Person(number => Number("0b" + number));
+  const personTwo = new Person(number => number);
   // functional tests
   it("checks that '10' is understood as '2' for a binary knower", () => {
     wish(personOne.read(10) === 2);
