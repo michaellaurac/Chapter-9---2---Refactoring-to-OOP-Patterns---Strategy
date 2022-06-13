@@ -6,7 +6,7 @@ const fileName = () => {
 /* eslint-env mocha */
 
 const wish = require("wish");
-const { Person, binaryAware, binaryOblivious } = require("./strategy.js");
+const { Person, binary } = require("./strategy.js");
 
 describe("tests run on the 'strategy.js' file:", () => {
   // setup test
@@ -14,8 +14,8 @@ describe("tests run on the 'strategy.js' file:", () => {
     wish(fileName() === "strategy_test.js");
   });
   // initialisation
-  const personOne = new Person(binaryAware);
-  const personTwo = new Person(binaryOblivious);
+  const personOne = new Person(binary.aware);
+  const personTwo = new Person(binary.oblivious);
   // functional tests
   it("checks that '10' is understood as '2' for a binary knower", () => {
     wish(personOne.read(10) === 2);

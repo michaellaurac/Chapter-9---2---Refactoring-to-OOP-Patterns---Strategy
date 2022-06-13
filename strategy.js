@@ -6,12 +6,9 @@ class Person {
   read (number) { return this.whatIs(number); };
 };
 
-function binaryAware (number) {
-  return Number("0b" + number);
-}
+const binary = {
+  aware (number) { return Number("0b" + number); },
+  oblivious (number) { return number; }
+};
 
-function binaryOblivious (number) {
-  return number;
-}
-
-module.exports = { Person, binaryAware, binaryOblivious };
+module.exports = { Person, binary };
